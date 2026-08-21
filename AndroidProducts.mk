@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_eBV6600.mk
+    $(LOCAL_DIR)/twrp_BV6600.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_BV6600-user \
-    omni_BV6600-userdebug \
-    omni_BV6600-eng
+    twrp_BV6600-user \
+    twrp_BV6600-userdebug \
+    twrp_BV6600-eng
