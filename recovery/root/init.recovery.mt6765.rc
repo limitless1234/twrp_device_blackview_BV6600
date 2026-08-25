@@ -4,9 +4,6 @@ on init
     chmod 0660 /dev/touch
     chown root system /dev/touch
 
-#touch
-/dev/touch                0660   root       system
-
 on fs && property:ro.debuggable=0
     # distinguish USB shoulde connect or not, i.e. CDP vs SDP
     write /sys/class/udc/musb-hdrc/device/cmode 2
