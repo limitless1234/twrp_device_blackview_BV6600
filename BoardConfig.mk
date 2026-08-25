@@ -107,10 +107,6 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 
-# Touch
-RECOVERY_TOUCHSCREEN_SWAP_XY := true
-RECOVERY_TOUCHSCREEN_FLIP_Y := true
-
 # Display - confirmed via BV6600 boot log: "framebuffer: 0 (720 x 1440)"
 DEVICE_RESOLUTION := 720x1440
 TARGET_SCREEN_WIDTH := 720
