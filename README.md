@@ -1,4 +1,4 @@
-# Android device tree for Blackview BV6600 (BV6600)
+# Android device tree for Blackview BV6600 (EEA)
 
 ```
 #
