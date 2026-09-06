@@ -76,6 +76,10 @@ BOARD_SUPER_PARTITION_GROUPS := blackview_dynamic_partitions
 BOARD_BLACKVIEW_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor product
 BOARD_BLACKVIEW_DYNAMIC_PARTITIONS_SIZE := 4290772992
 
+# Logical/dynamic partitions - device is non-A/B, super contains system/vendor/product
+AB_OTA_UPDATER := false
+TW_INCLUDE_LOGICAL := system vendor product
+
 # Platform
 TARGET_BOARD_PLATFORM := mt6765
 
@@ -125,3 +129,4 @@ TW_INCLUDE_MOUNT_VENDOR := true
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := false
+TW_CRYPTO_USE_SYSTEM_VOLD := true
