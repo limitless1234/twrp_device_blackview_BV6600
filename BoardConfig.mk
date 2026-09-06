@@ -75,7 +75,7 @@ BOARD_SUPER_PARTITION_SIZE := 4294967296
 BOARD_SUPER_PARTITION_GROUPS := blackview_dynamic_partitions
 BOARD_BLACKVIEW_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor product
 BOARD_BLACKVIEW_DYNAMIC_PARTITIONS_SIZE := 4290772992
-
+BOARD_USES_METADATA_PARTITION := true
 # Logical/dynamic partitions - device is non-A/B, super contains system/vendor/product
 AB_OTA_UPDATER := false
 TW_INCLUDE_LOGICAL := system vendor product
