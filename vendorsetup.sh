@@ -5,6 +5,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-add_lunch_combo twrp_BV6600-user
-add_lunch_combo twrp_BV6600-userdebug
-add_lunch_combo twrp_BV6600-eng
+COMMON_LUNCH_CHOICES twrp_BV6600-user
+COMMON_LUNCH_CHOICES twrp_BV6600-userdebug
+COMMON_LUNCH_CHOICES twrp_BV6600-eng
