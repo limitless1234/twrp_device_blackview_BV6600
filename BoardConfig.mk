@@ -119,3 +119,9 @@ BOARD_HAS_MTK_HARDWARE := true
 
 # include vendor
 TW_INCLUDE_MOUNT_VENDOR := true
+
+# FBE (File Based Encryption) support - confirmed via real device fstab:
+# fileencryption=aes-256-xts, no metadata_encryption, Android 10 / SDK 29
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_FBE := true
+TW_INCLUDE_FBE_METADATA_DECRYPT := false
