@@ -17,3 +17,9 @@ on post-fs
     symlink /dev/block/mmcblk0boot0 /dev/block/platform/bootdevice/by-name/preloader_a
     symlink /dev/block/mmcblk0boot1 /dev/block/platform/bootdevice/by-name/preloader_b
 
+    # persist must be mounted before trustkernel.rc (teed --prot /mnt/vendor/persist/t6).
+    # NO restorecon here: recovery policy lacks vendor types and would mislabel the TEE storage.
+    mkdir /mnt/vendor 0755 root root
+    mkdir /mnt/vendor/persist 0755 root root
+    mount ext4 /dev/block/platform/bootdevice/by-name/persist /mnt/vendor/persist nosuid nodev noatime
+
