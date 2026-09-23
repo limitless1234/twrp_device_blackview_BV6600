@@ -17,26 +17,3 @@ on post-fs
     symlink /dev/block/mmcblk0boot0 /dev/block/platform/bootdevice/by-name/preloader_a
     symlink /dev/block/mmcblk0boot1 /dev/block/platform/bootdevice/by-name/preloader_b
 
-    # TWRP's boot sequence does not auto-mount /mnt/vendor/* partitions the way real
-    # Android's first-stage fs_mgr does (confirmed: TWRP only auto-mounts system/vendor
-    # briefly + data via Decrypt_Data(), nothing else). Several vendor blobs assume these
-    # are already mounted by the time their own on post-fs triggers fire
-    mkdir /mnt/vendor/persist 0755 root root
-    mount ext4 /dev/block/platform/bootdevice/by-name/persist /mnt/vendor/persist nosuid nodev noatime
-    restorecon_recursive /mnt/vendor/persist
-
-    mkdir /mnt/vendor/protect_f 0770 system system
-    mount ext4 /dev/block/platform/bootdevice/by-name/protect1 /mnt/vendor/protect_f nosuid nodev noatime
-    restorecon_recursive /mnt/vendor/protect_f
-
-    mkdir /mnt/vendor/protect_s 0770 system system
-    mount ext4 /dev/block/platform/bootdevice/by-name/protect2 /mnt/vendor/protect_s nosuid nodev noatime
-    restorecon_recursive /mnt/vendor/protect_s
-
-    mkdir /mnt/vendor/nvdata 0771 system system
-    mount ext4 /dev/block/platform/bootdevice/by-name/nvdata /mnt/vendor/nvdata nosuid nodev noatime
-    restorecon_recursive /mnt/vendor/nvdata
-
-    mkdir /mnt/vendor/nvcfg 0771 system system
-    mount ext4 /dev/block/platform/bootdevice/by-name/nvcfg /mnt/vendor/nvcfg nosuid nodev noatime
-    restorecon_recursive /mnt/vendor/nvcfg
